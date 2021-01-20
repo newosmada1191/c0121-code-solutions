@@ -1,0 +1,12 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+p {
+  line-height: 1.6em;
+}
