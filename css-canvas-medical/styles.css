@@ -1,0 +1,36 @@
+body {
+  font-family: Avenir, sans-serif;
+}
+
+.clinicContainer {
+  background-color: #fbfdfd;
+}
+
+.navContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.navHalf {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.navLink,
+.navLinkButton {
+  width: calc(100% / 5);
+  margin: auto;
+}
+
+a {
+  text-decoration: none !important;
+  color: #808080;
+}
+
+.logoForNav {
+  width: 50%;
+  height: auto;
+  margin-left: 6rem;
+}
