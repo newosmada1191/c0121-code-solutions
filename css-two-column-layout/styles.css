@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Karla;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+h1 {
+  letter-spacing: 2px;
+  font-size: 47px;
+}
+
+p {
+  line-height: 175%;
+  font-size: 14px;
+}
+
+.botMargin {
+  margin-bottom: 2.5rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.column-full {
+  text-align: center;
+}
+
+.column-half {
+  display: flex;
+  flex-wrap: flex;
+}
+
+.learnButton {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  margin: 0 1.5rem;
+}
+
+.textContent {
+  margin: 1.5rem 0;
+  width: 60%;
+}
+
+button {
+  border: 1px solid #F81F2D;
+  color: #F81F2D;
+  text-transform: uppercase;
+  height: 75%;
+}
