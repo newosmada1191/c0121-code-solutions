@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: Karla;
+  font-family: 'Karla', sans-serif;
 }
 
 h1,
@@ -55,12 +55,15 @@ p {
 
 .textContent {
   margin: 1.5rem 0;
-  width: 60%;
+  width: 57%;
 }
 
 button {
-  border: 1px solid #F81F2D;
-  color: #F81F2D;
+  border: 2px solid #f81f2d;
+  color: #f81f2d;
   text-transform: uppercase;
-  height: 75%;
+  background: white;
+  font-size: 12px;
+  padding: 10px 50px;
+  cursor: pointer;
 }
