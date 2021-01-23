@@ -82,14 +82,44 @@ a {
 
 /* START INFORMATION CONTAINER */
 .infoContainer {
-  display: flex;
-  justify-content: center;
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  padding-bottom: 600px;
+  margin: 5rem 3rem;
   position: relative;
 }
 
-.infoContainer > img {
-  width: 94%;
+.imgShade {
+  background-color: black, transparent;
+  height: 100%;
+  width: 100%;
 }
 
+.infoImg {
+  position: absolute;
+}
+
+.infoImg > h1 {
+  color: white;
+  margin-left: 5rem;
+}
+
+.infoButton {
+  background-color: #004f6f;
+  border: 0 solid #004f6f;
+  padding: 0.8rem 2.2rem;
+  border-radius: 3.75px;
+  cursor: pointer;
+  margin-left: 5rem;
+}
+
+.infoButton > a {
+  color: white;
+}
+
+.infoImg > p {
+  margin-left: 5rem;
+  color: white;
+}
 
 /* END INFORMATION CONTAINER */
