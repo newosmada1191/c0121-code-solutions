@@ -40,7 +40,7 @@ h4 {
 
 a {
   text-decoration: none !important;
-  color: #808080;
+  color: #5a5a5a;
 }
 
 .navLinkButton {
@@ -67,10 +67,11 @@ a {
 /* START FOOTER FOR TERMS */
 .termsContainer {
   background: #f4f4f4;
-  color: #808080;
+  color: #5a5a5a;
   width: 100%;
   display: flex;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
+  padding-left: 3rem;
 }
 
 .termsLink {
@@ -81,7 +82,8 @@ a {
 /* END FOOTER FOR TERMS */
 
 /* START INFORMATION CONTAINER */
-.infoContainer {
+
+/* .infoContainer {
   background-image: url('images/hero.jpg');
   background-size: cover;
   padding-bottom: 600px;
@@ -121,6 +123,35 @@ a {
 .infoImg > p {
   margin-left: 5rem;
   color: white;
-}
+} */
 
 /* END INFORMATION CONTAINER */
+
+/* START OF LEARN CONTAINER */
+
+.learnContainer {
+  display: flex;
+  color: #5a5a5a;
+}
+
+.learnText {
+  width: 50%;
+}
+
+.learnButton {
+  width: 50%;
+}
+
+.lrnButton {
+  background-color: #004f6f;
+  border: 0 solid #004f6f;
+  padding: 0.8rem 2.2rem;
+  border-radius: 3.75px;
+  cursor: pointer;
+}
+
+.lrnButton > a {
+  color: white;
+}
+
+/* END OF LEARN CONTAINER */
