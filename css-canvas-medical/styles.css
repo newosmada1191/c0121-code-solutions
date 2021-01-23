@@ -97,6 +97,7 @@ a {
 
 .infoImg {
   position: absolute;
+  padding-top: 5rem;
 }
 
 .infoImg > h1 {
