@@ -2,6 +2,19 @@ body {
   font-family: Avenir, sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Tiempos Headline', sans-serif;
+}
+
+/* START NAVIGATION BAR */
+.mainContainer {
+  max-width: 80%;
+  margin: auto;
+}
+
 .clinicContainer {
   background-color: #fbfdfd;
 }
@@ -18,10 +31,11 @@ body {
   width: 50%;
 }
 
-.navLink,
-.navLinkButton {
+.navLink {
   width: calc(100% / 5);
   margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 a {
@@ -29,8 +43,53 @@ a {
   color: #808080;
 }
 
+.navLinkButton {
+  background-color: #004f6f;
+  border: 0 solid #004f6f;
+  padding: 0.8rem;
+  border-radius: 3.75px;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+.navLinkButton > a {
+  color: white;
+}
+
 .logoForNav {
   width: 50%;
   height: auto;
-  margin-left: 6rem;
+  margin-left: 3rem;
 }
+
+/* END NAVIGATION BAR */
+
+/* START FOOTER FOR TERMS */
+.termsContainer {
+  background: #f4f4f4;
+  color: #808080;
+  width: 100%;
+  display: flex;
+  padding: 2rem 0;
+}
+
+.termsLink {
+  font-weight: 500;
+  margin-right: 3rem;
+}
+
+/* END FOOTER FOR TERMS */
+
+/* START INFORMATION CONTAINER */
+.infoContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.infoContainer > img {
+  width: 94%;
+}
+
+
+/* END INFORMATION CONTAINER */
