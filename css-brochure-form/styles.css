@@ -1,0 +1,69 @@
+* {
+  font-family: 'Brandon Grotesque';
+}
+
+fieldset {
+  max-width: 400px;
+  border: none;
+}
+
+:not(input):not(select):not(option) {
+  text-transform: uppercase;
+}
+
+h4 {
+  text-align: center;
+  color: #F34848;
+  font-family: 'Brandon Grotesque';
+  font-weight: 500;
+}
+
+label.formLabel {
+  margin-left: 12px;
+  font-size: 10px;
+  font-weight: 550;
+}
+
+.labelFormat {
+    margin-top: 8px;
+}
+
+.textInput {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  width: 98%;
+  font-size: 14px;
+  color: lightgray;
+}
+
+.textInput2 {
+  margin-top: 3px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 98%;
+  font-size: 14px;
+  background: #EBEBEB;
+}
+
+.formGroup2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  background-color: #F34848;
+  color: white;
+  border-radius: 24px;
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 5rem;
+  height: 1.8rem;
+}
