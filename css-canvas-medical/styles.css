@@ -9,15 +9,12 @@ h4 {
   font-family: 'Tiempos Headline', sans-serif;
 }
 
-/* START NAVIGATION BAR */
 .mainContainer {
-  max-width: 80%;
+  max-width: 60%;
   margin: auto;
 }
 
-.clinicContainer {
-  background-color: #fbfdfd;
-}
+/* START NAVIGATION BAR */
 
 .navContainer {
   display: flex;
@@ -28,11 +25,17 @@ h4 {
 .navHalf {
   display: flex;
   flex-wrap: wrap;
+  width: 46.5%;
+}
+
+.navHalfTwo {
+  display: flex;
+  flex-wrap: wrap;
   width: 50%;
 }
 
 .navLink {
-  width: calc(100% / 5);
+  width: 18%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -43,13 +46,16 @@ a {
   color: #5a5a5a;
 }
 
+li > a {
+  color: white;
+}
+
 .navLinkButton {
   background-color: #004f6f;
   border: 0 solid #004f6f;
   padding: 0.8rem;
   border-radius: 3.75px;
   cursor: pointer;
-  margin-right: 2rem;
 }
 
 .navLinkButton > a {
@@ -65,6 +71,7 @@ a {
 /* END NAVIGATION BAR */
 
 /* START FOOTER FOR TERMS */
+
 .termsContainer {
   background: #f4f4f4;
   color: #5a5a5a;
@@ -83,28 +90,39 @@ a {
 
 /* START INFORMATION CONTAINER */
 
-/* .infoContainer {
-  background-image: url('images/hero.jpg');
+.infoContainer {
+  height: 60vh;
+  width: 100%;
+  padding: 3rem 3rem;
+  margin-bottom: 1rem;
+}
+
+.infoImg {
+  background-image: url(images/hero.jpg);
   background-size: cover;
-  padding-bottom: 600px;
-  margin: 5rem 3rem;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
 .imgShade {
-  background-color: black, transparent;
+  background-color: rgba(59, 59, 59, 0.226);
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 }
 
-.infoImg {
+.infoText {
   position: absolute;
-  padding-top: 5rem;
+  color: white;
+  top: 4rem;
+  left: 4rem;
 }
 
-.infoImg > h1 {
-  color: white;
-  margin-left: 5rem;
+.infoText > p {
+  line-height: 1.5rem;
 }
 
 .infoButton {
@@ -113,17 +131,12 @@ a {
   padding: 0.8rem 2.2rem;
   border-radius: 3.75px;
   cursor: pointer;
-  margin-left: 5rem;
+  margin-top: 1rem;
 }
 
 .infoButton > a {
   color: white;
 }
-
-.infoImg > p {
-  margin-left: 5rem;
-  color: white;
-} */
 
 /* END INFORMATION CONTAINER */
 
@@ -136,7 +149,7 @@ a {
 
 .learnText {
   width: 50%;
-  padding-left: 100px;
+  padding-left: 3rem;
 }
 
 .learnButton {
@@ -151,6 +164,8 @@ a {
   border-radius: 3.75px;
   cursor: pointer;
   position: absolute;
+  right: 3rem;
+  top: 1.5rem;
 }
 
 .lrnButton > a {
@@ -158,3 +173,79 @@ a {
 }
 
 /* END OF LEARN CONTAINER */
+
+/* START OF CLINIC CONTAINER */
+
+.clinicContainer {
+  background-color: #f4f4f4;
+  color: #5a5a5a;
+}
+
+.clinicRowOne {
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.clinicRowTwo {
+  display: flex;
+  padding-bottom: 5rem;
+}
+
+.clinicLocOne {
+  width: 50%;
+  text-align: center;
+  padding-left: 3rem;
+}
+
+.clinicLocTwo {
+  width: 50%;
+  text-align: center;
+  padding-right: 3rem;
+}
+
+/* END OF CLINIC CONTAINER */
+
+/* START SITEMAP */
+
+.mapContainer {
+  background-color: #5a5a5a;
+  color: white;
+  display: flex;
+  padding: 4rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.mapCol > img {
+  width: 45%;
+}
+
+.mapCol > p {
+  padding-top: 1rem;
+}
+
+.mapRow {
+  width: 50%;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.mapRowTwo {
+  display: flex;
+  width: 50%;
+  line-height: 2rem;
+}
+
+.mapCol {
+  width: 50%;
+  padding-top: 1.2rem;
+}
+
+.mapColTwo {
+  width: 50%;
+}
+
+/* END SITEMAP */
