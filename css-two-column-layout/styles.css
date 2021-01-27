@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+h1 {
+  letter-spacing: 2px;
+  font-size: 47px;
+}
+
+p {
+  line-height: 175%;
+  font-size: 14px;
+}
+
+.botMargin {
+  margin-bottom: 2.5rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.column-full {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+.column-half {
+  width: 50%;
+}
+
+.learnButton {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  margin: 0 1.5rem;
+}
+
+.textContent {
+  margin: 1.5rem 0;
+  width: 57%;
+}
+
+button {
+  border: 2px solid #f81f2d;
+  color: #f81f2d;
+  text-transform: uppercase;
+  background: white;
+  font-size: 12px;
+  padding: 10px 50px;
+  cursor: pointer;
+}
