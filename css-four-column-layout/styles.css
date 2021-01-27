@@ -1,0 +1,46 @@
+* {
+  font-family: 'Barlow', sans-serif;
+  box-sizing: border-box;
+  background-color: #f5f7f8;
+}
+
+img {
+  width: 100%;
+}
+
+h3 {
+  margin-bottom: 2.5rem;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.mainText {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+}
+
+.phoneImg {
+  width: 25%;
+  flex-basis: auto;
+  padding: 0 1rem;
+}
+
+.icon {
+  width: 22.5%;
+}
+
+.rowTwo {
+  display: flex;
+  text-align: center;
+}
+
+.text {
+  width: 25%;
+}
