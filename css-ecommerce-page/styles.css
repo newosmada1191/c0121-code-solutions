@@ -1,3 +1,56 @@
 * {
   font-family: 'DM Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background-color: rgba(168, 168, 168, 0.125);
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.maintText {
+  margin: 1rem 0;
+}
+
+.greyColor {
+  color: lightgray;
+}
+
+.mainText {
+  text-align: center;
+}
+
+.allImg {
+  display: flex;
+}
+
+.imges {
+  width: 20%;
+  padding: 0 0.75rem;
+  margin: auto;
+}
+
+.imges > img {
+  width: 100%;
+  background-color: rgba(168, 168, 168, 0.125);
+}
+
+.productInfo {
+  display: flex;
+}
+
+.priceType {
+  width: 20%;
+  padding-left: 0.75rem;
+}
+
+p {
+  font-weight: 400;
 }
