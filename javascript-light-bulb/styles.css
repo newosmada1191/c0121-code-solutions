@@ -1,12 +1,8 @@
 .dark-container {
-  margin: 0;
   background-color: rgb(27, 27, 27);
 }
 
 .dark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: auto;
   margin-top: 30vh;
   background: rgb(41, 41, 41);
@@ -17,14 +13,10 @@
 }
 
 .light-container {
-  margin: 0;
   background-color: rgb(255, 254, 224);
 }
 
 .light {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: auto;
   margin-top: 30vh;
   background: rgb(255, 243, 81);
