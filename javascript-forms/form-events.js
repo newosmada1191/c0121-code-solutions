@@ -1,5 +1,5 @@
-var $name = document.forms.myform.elements.name;
-var $email = document.querySelector('#user-email');
+var $name = document.forms[0].elements[0];
+var $email = document.forms[0].elements[1];
 var $message = document.forms[0].elements[2];
 
 function handleEvent(event) {
