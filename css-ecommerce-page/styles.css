@@ -25,7 +25,8 @@
 
 .column > img {
   width: 100%;
-  margin: 0 -5px 0 -5px;
+  height: 400px;
+  margin-left: -5px;
 }
 
 p {
