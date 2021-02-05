@@ -22,12 +22,7 @@ var $stringify = JSON.stringify(arrayObjects);
 console.log('value of $stringify:', $stringify);
 console.log('typeof $stringify:', typeof $stringify);
 
-var $json = JSON.stringify(
-  {
-    name: 'Owen Adams',
-    numberID: '1337'
-  }
-);
+var $json = '{"student": "Owen Adams", "numberID": 1337}';
 console.log('value of $json:', $json);
 console.log('typeof $json:', typeof $json);
 
