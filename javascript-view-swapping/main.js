@@ -13,14 +13,9 @@ tabContainer.addEventListener('click', function (event) {
         tabElements[i].className = 'tab';
       }
     }
-    // var dataView = event.target.getAttribute('data-view');
-    // console.log(dataView);
-    // I could not figure this out. I tried many different if conditionals.
-    // I know I can just put the className modifiers in the for loop above
-    // this. I'm just leaving this here so you can tell me why I am big suck.
-    // I got it to work though!
+    var dataView = event.target.getAttribute('data-view');
     for (var index = 0; index < viewElements.length; index++) {
-      if (tabElements[index] === event.target) {
+      if (viewElements[index].getAttribute('data-view') === dataView) {
         viewElements[index].className = 'view';
       } else {
         viewElements[index].className = 'view hidden';
