@@ -9,36 +9,38 @@ h4 {
   font-family: 'Tiempos Headline', sans-serif;
 }
 
-.mainContainer {
+.container {
   max-width: 60%;
   margin: auto;
 }
 
 /* START NAVIGATION BAR */
 
-.navContainer {
+.column {
   display: flex;
   flex-wrap: wrap;
   margin: 1.5rem 0;
 }
 
-.navHalf {
-  display: flex;
-  flex-wrap: wrap;
-  width: 46.5%;
+.row-one {
+  width: 45%;
 }
 
-.navHalfTwo {
+.row-two {
   display: flex;
-  flex-wrap: wrap;
   width: 50%;
 }
 
-.navLink {
-  width: 18%;
+.nav-link {
+  width: calc(100% / 5);
   margin: auto;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+}
+
+.nav-logo {
+  width: 50%;
+  height: auto;
+  padding-left: 3.5rem;
 }
 
 a {
@@ -50,29 +52,35 @@ li > a {
   color: white;
 }
 
-.navLinkButton {
+button {
   background-color: #004f6f;
   border: 0 solid #004f6f;
-  padding: 0.8rem;
+  padding: 1rem;
   border-radius: 3.75px;
   cursor: pointer;
 }
 
-.navLinkButton > a {
+.nav-button {
+  background-color: #004f6f;
+  border: 0 solid #004f6f;
+  padding: 1rem;
+  border-radius: 3.75px;
+  cursor: pointer;
+}
+
+button > a {
   color: white;
 }
 
-.logoForNav {
-  width: 50%;
-  height: auto;
-  margin-left: 3rem;
+ul {
+  list-style-type: none;
 }
 
 /* END NAVIGATION BAR */
 
 /* START FOOTER FOR TERMS */
 
-.termsContainer {
+.terms-column {
   background: #f4f4f4;
   color: #5a5a5a;
   width: 100%;
@@ -81,7 +89,7 @@ li > a {
   padding-left: 3rem;
 }
 
-.termsLink {
+.terms-link {
   font-weight: 500;
   margin-right: 3rem;
 }
@@ -90,14 +98,14 @@ li > a {
 
 /* START INFORMATION CONTAINER */
 
-.infoContainer {
+.info-column {
   height: 60vh;
   width: 100%;
   padding: 3rem 3rem;
   margin-bottom: 1rem;
 }
 
-.infoImg {
+.info-img {
   background-image: url(images/hero.jpg);
   background-size: cover;
   width: 100%;
@@ -105,7 +113,7 @@ li > a {
   position: relative;
 }
 
-.imgShade {
+.img-shade {
   background-color: rgba(59, 59, 59, 0.226);
   position: absolute;
   top: 0;
@@ -114,93 +122,68 @@ li > a {
   width: 100%;
 }
 
-.infoText {
+.info-text {
   position: absolute;
   color: white;
   top: 4rem;
   left: 4rem;
 }
 
-.infoText > p {
+.info-text > p {
   line-height: 1.5rem;
 }
 
-.infoButton {
-  background-color: #004f6f;
-  border: 0 solid #004f6f;
-  padding: 0.8rem 2.2rem;
-  border-radius: 3.75px;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.infoButton > a {
-  color: white;
+.info-text > button {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 /* END INFORMATION CONTAINER */
 
 /* START OF LEARN CONTAINER */
 
-.learnContainer {
+.learn-column {
   display: flex;
   color: #5a5a5a;
 }
 
-.learnText {
+.learn-row {
   width: 50%;
   padding-left: 3rem;
 }
 
-.learnButton {
-  width: 50%;
+.learn-row > button {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   position: relative;
-}
-
-.lrnButton {
-  background-color: #004f6f;
-  border: 0 solid #004f6f;
-  padding: 0.8rem 2.2rem;
-  border-radius: 3.75px;
-  cursor: pointer;
-  position: absolute;
-  right: 3rem;
-  top: 1.5rem;
-}
-
-.lrnButton > a {
-  color: white;
+  top: 2rem;
+  left: 20rem;
 }
 
 /* END OF LEARN CONTAINER */
 
 /* START OF CLINIC CONTAINER */
 
-.clinicContainer {
+.clinic-column {
   background-color: #f4f4f4;
   color: #5a5a5a;
 }
 
-.clinicRowOne {
+.clinic-column-one {
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
-.clinicRowTwo {
+.clinic-column-two {
   display: flex;
   padding-bottom: 5rem;
 }
 
-.clinicLocOne {
+.clinic-row {
   width: 50%;
   text-align: center;
   padding-left: 3rem;
-}
-
-.clinicLocTwo {
-  width: 50%;
-  text-align: center;
   padding-right: 3rem;
 }
 
@@ -208,44 +191,40 @@ li > a {
 
 /* START SITEMAP */
 
-.mapContainer {
+.map-container {
   background-color: #5a5a5a;
   color: white;
   display: flex;
   padding: 4rem;
 }
 
-ul {
-  list-style-type: none;
+.map-col {
+  width: 50%;
+  padding-top: 1.2rem;
 }
 
-.mapCol > img {
+.map-col-two {
+  width: 50%;
+}
+
+.map-col > img {
   width: 45%;
 }
 
-.mapCol > p {
+.map-col > p {
   padding-top: 1rem;
 }
 
-.mapRow {
+.map-row {
   width: 50%;
   font-size: 0.8rem;
   line-height: 1.5rem;
 }
 
-.mapRowTwo {
+.map-row-two {
   display: flex;
   width: 50%;
   line-height: 2rem;
-}
-
-.mapCol {
-  width: 50%;
-  padding-top: 1.2rem;
-}
-
-.mapColTwo {
-  width: 50%;
 }
 
 /* END SITEMAP */
