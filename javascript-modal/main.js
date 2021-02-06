@@ -1,31 +1,14 @@
-var $whiteBg = document.querySelector('.white-background');
-var $hidden = document.querySelector('.hidden');
-var $openModal = document.querySelector('.open-modal');
-var $decline = document.querySelector('.decline');
+var $popup = document.querySelector('.pop-up-background');
+var $open = document.querySelector('#open');
+var $close = document.querySelector('#close');
 
-function clicks(event) {
-  var firstVar;
-  var secondVar;
-  var thirdVar;
-  if ($whiteBg.className === 'white-background') {
-    firstVar = 'shade-background';
+function openClose(event) {
+  if ($popup.className === 'pop-up-background') {
+    $popup.className = 'pop-up-background hidden';
+  } else {
+    $popup.className = 'pop-up-background';
   }
-  if ($hidden.className === 'hidden') {
-    secondVar = 'pop-up';
-  }
-  if ($openModal.className === 'open-modal') {
-    thirdVar = 'disabled-modal';
-  }
-  $whiteBg.className = firstVar;
-  $hidden.className = secondVar;
-  $openModal.className = thirdVar;
 }
 
-function clicksTwo(event) {
-  $whiteBg.className = 'white-background';
-  $hidden.className = 'hidden';
-  $openModal.className = 'open-modal';
-}
-
-$openModal.addEventListener('click', clicks);
-$decline.addEventListener('click', clicksTwo);
+$open.addEventListener('click', openClose);
+$close.addEventListener('click', openClose);
