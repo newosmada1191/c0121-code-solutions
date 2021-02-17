@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <title>JavaScript Carousel</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -14,13 +17,14 @@
   <div name="container" class="container" id="container">
     <div name="imageContainer" class="image-container" id="image-container">
       <div name="leftArrow" class="left-arrow" id="left-arrow">
-        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-arrow-left" id="left-arrow-icon"></i>
       </div>
       <div name="image" class="image" id="image">
-        <img src="images/001.png" name="imageSource" class="image-source" id="image-source">
+        <img src="images/001.png" name="imageSource" class="image-source"
+          id="image-source">
       </div>
       <div name="rightArrow" class="right-arrow" id="right-arrow">
-        <i class="fas fa-arrow-right"></i>
+        <i class="fas fa-arrow-right" id="right-arrow-icon"></i>
       </div>
     </div>
     <div name="iconChange" class="icon-change" id="icon-change">
