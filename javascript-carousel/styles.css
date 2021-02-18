@@ -21,6 +21,7 @@ body {
 h1 {
   background-color: lightskyblue;
   padding-bottom: 3rem;
+  letter-spacing: 1rem;
 }
 
 .container {
@@ -66,4 +67,8 @@ h1 {
 .icon-change {
   align-items: flex-end;
   padding: 2rem 0;
+}
+
+.icon-change > i:hover {
+  cursor: pointer;
 }
