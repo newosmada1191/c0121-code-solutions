@@ -7,7 +7,7 @@ var $circleThree = document.querySelector('#circle-three');
 var $circleFour = document.querySelector('#circle-four');
 var $circleFive = document.querySelector('#circle-five');
 
-var intervalId = setInterval(rightClick, 5000);
+var intervalID = setInterval(rightClick, 5000);
 
 $rightArrow.addEventListener('click', rightClick);
 
@@ -33,6 +33,8 @@ function rightClick(event) {
     $circleFive.setAttribute('class', 'far fa-circle');
     $circleOne.setAttribute('class', 'fas fa-circle');
   }
+  clearInterval(intervalID);
+  intervalID = setInterval(rightClick, 5000);
 }
 
 $leftArrow.addEventListener('click', leftClick);
@@ -58,7 +60,7 @@ function leftClick(event) {
     $img.setAttribute('src', 'images/025.png');
     $circleFive.setAttribute('class', 'far fa-circle');
     $circleFour.setAttribute('class', 'fas fa-circle');
-  } else if (event.target) {
-    clearInterval(intervalId);
   }
+  clearInterval(intervalID);
+  intervalID = setInterval(leftClick, 5000);
 }
