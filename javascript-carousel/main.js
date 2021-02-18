@@ -7,7 +7,7 @@ var $circleThree = document.querySelector('#circle-three');
 var $circleFour = document.querySelector('#circle-four');
 var $circleFive = document.querySelector('#circle-five');
 
-var intervalID = setInterval(rightClick, 5000);
+var intervalID = setInterval(rightClick, 3000);
 
 $rightArrow.addEventListener('click', rightClick);
 
@@ -34,7 +34,7 @@ function rightClick(event) {
     $circleOne.setAttribute('class', 'fas fa-circle');
   }
   clearInterval(intervalID);
-  intervalID = setInterval(rightClick, 5000);
+  intervalID = setInterval(rightClick, 3000);
 }
 
 $leftArrow.addEventListener('click', leftClick);
@@ -62,5 +62,60 @@ function leftClick(event) {
     $circleFour.setAttribute('class', 'fas fa-circle');
   }
   clearInterval(intervalID);
-  intervalID = setInterval(leftClick, 5000);
+  intervalID = setInterval(rightClick, 3000);
 }
+
+$circleOne.addEventListener('click', function (event) {
+  $img.setAttribute('src', 'images/001.png');
+  $circleOne.setAttribute('class', 'fas fa-circle');
+  $circleTwo.setAttribute('class', 'far fa-circle');
+  $circleThree.setAttribute('class', 'far fa-circle');
+  $circleFour.setAttribute('class', 'far fa-circle');
+  $circleFive.setAttribute('class', 'far fa-circle');
+  clearInterval(intervalID);
+  intervalID = setInterval(rightClick, 3000);
+});
+
+$circleTwo.addEventListener('click', function (event) {
+  $img.setAttribute('src', 'images/004.png');
+  $circleOne.setAttribute('class', 'far fa-circle');
+  $circleTwo.setAttribute('class', 'fas fa-circle');
+  $circleThree.setAttribute('class', 'far fa-circle');
+  $circleFour.setAttribute('class', 'far fa-circle');
+  $circleFive.setAttribute('class', 'far fa-circle');
+  clearInterval(intervalID);
+  intervalID = setInterval(rightClick, 3000);
+});
+
+$circleThree.addEventListener('click', function (event) {
+  $img.setAttribute('src', 'images/007.png');
+  $circleOne.setAttribute('class', 'far fa-circle');
+  $circleTwo.setAttribute('class', 'far fa-circle');
+  $circleThree.setAttribute('class', 'fas fa-circle');
+  $circleFour.setAttribute('class', 'far fa-circle');
+  $circleFive.setAttribute('class', 'far fa-circle');
+  clearInterval(intervalID);
+  intervalID = setInterval(rightClick, 3000);
+});
+
+$circleFour.addEventListener('click', function (event) {
+  $img.setAttribute('src', 'images/025.png');
+  $circleOne.setAttribute('class', 'far fa-circle');
+  $circleTwo.setAttribute('class', 'far fa-circle');
+  $circleThree.setAttribute('class', 'far fa-circle');
+  $circleFour.setAttribute('class', 'fas fa-circle');
+  $circleFive.setAttribute('class', 'far fa-circle');
+  clearInterval(intervalID);
+  intervalID = setInterval(rightClick, 3000);
+});
+
+$circleFive.addEventListener('click', function (event) {
+  $img.setAttribute('src', 'images/039.png');
+  $circleOne.setAttribute('class', 'far fa-circle');
+  $circleTwo.setAttribute('class', 'far fa-circle');
+  $circleThree.setAttribute('class', 'far fa-circle');
+  $circleFour.setAttribute('class', 'far fa-circle');
+  $circleFive.setAttribute('class', 'fas fa-circle');
+  clearInterval(intervalID);
+  intervalID = setInterval(rightClick, 3000);
+});
