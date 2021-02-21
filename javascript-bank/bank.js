@@ -18,15 +18,18 @@ Bank.prototype.openAccount = function (holder, balance) {
 }
 
 Bank.prototype.getAccount = function (number) {
+  var account = null;
   for (var i = 0; i < this.accounts.length; i++) {
     if (this.accounts[i].number === number)
-    var account = this.accounts[i];
-    return account;
-  } else {
-    return null;
+    account = this.accounts[i];
   }
+  return account;
 }
 
 Bank.prototype.getTotalAssets = function () {
-
+  var total = 0;
+  for (var i = 0; i < this.accounts.length; i++) {
+    total += this.accounts[i].getBalance();
+  }
+  return total;
 }
