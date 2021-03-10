@@ -1,4 +1,4 @@
-var $span = document.querySelectorAll('.text')
+var $span = document.querySelectorAll('span')
 var i = 0;
 
 window.addEventListener('keypress', function (event) {
