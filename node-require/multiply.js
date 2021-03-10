@@ -1,4 +1,3 @@
-function multiply(x, y) {
-  z = x * y;
-  return 'result: ' + z;
+module.exports = function multiply(x, y) {
+  return x * y;
 }

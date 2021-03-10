@@ -1,4 +1,3 @@
-function divide(x, y) {
-  z = x / y;
-  return 'result: ' + z;
+module.exports = function divide(x, y) {
+  return x / y;
 }

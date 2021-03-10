@@ -1,4 +1,3 @@
-function subtract(x, y) {
-  z = x - y;
-  return 'result: ' + z;
+module.exports = function subtract(x, y) {
+  return x - y;
 }
