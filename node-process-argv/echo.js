@@ -1,3 +1,1 @@
-process.argv.forEach((value) => {
-  console.log(`${value}`);
-})
+console.log(process.argv[2]);
