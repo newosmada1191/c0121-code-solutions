@@ -1,6 +1,6 @@
 var $span = document.querySelectorAll('.text')
-var $test = document.querySelector('.g')
+var i = 0;
 
 window.addEventListener('keypress', function (event) {
-  console.log($test);
+  console.log(event.key);
 })
