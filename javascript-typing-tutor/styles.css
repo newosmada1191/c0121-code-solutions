@@ -1,5 +1,6 @@
 * {
   background-color: rgb(72, 72, 196);
+  font-family: 'RocknRoll One', sans-serif;
 }
 
 .container {
@@ -18,4 +19,16 @@
 
 .correct {
   color: #29aa3a;
+}
+
+.incorrect {
+  color: rgb(129, 59, 59);
+}
+
+@media screen and (max-width: 1300px) {
+  .text {
+    font-size: 40px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
 }
