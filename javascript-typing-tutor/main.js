@@ -1,18 +1,18 @@
 var $span = document.querySelectorAll('span')
 var i = 0;
 
-window.addEventListener('keypress', function (event) {
-  console.log(event.key);
+window.addEventListener('keydown', function (event) {
+  if ((event.code === 'Space') && ($span[i].getAttribute('class') === 'space')) {
+    $span[i].className = 'space correct';
+    i++
+  }
   if (event.key === $span[i].textContent) {
-    $span[i].className = 'text correct';
+    $span[i].setAttribute('class', 'correct');
     i++;
   } else if (event.key !== $span[i].textContent) {
-    $span[i].className = 'text incorrect';
-  }
-
-  if ($span[i].className === 'text space' && event.key === ' ') {
-    console.log('test');
-    $span[i].className = 'text space correct';
-    i++
+    if ($span[i].getAttribute('class') === 'space') {
+      $span[i].setAttribute('class', 'space incorrect')
+    }
+    $span[i].setAttribute('class', 'incorrect');
   }
 })
