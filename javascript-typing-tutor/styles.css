@@ -1,0 +1,80 @@
+* {
+  background-color: rgb(72, 72, 196);
+  font-family: 'RocknRoll One', sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: 70px;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: #f5f5f5;
+}
+
+.correct {
+  color: #29aa3a;
+}
+
+.incorrect {
+  color: rgb(129, 59, 59);
+}
+
+.prompt {
+  background-color: rgba(0, 0, 0, 0.493);
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #f5f5f5;
+}
+
+.content {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 10rem;
+  border-radius: 5px;
+  background-color: #29aa3a;
+}
+
+.content > p {
+  background-color: #29aa3a;
+}
+
+.okay {
+  padding: 0.5rem 2rem;
+  background-color: #f5f5f5;
+  color: #444;
+  font-size: 15px;
+  border: solid 0;
+  border-radius: 5px;
+  box-shadow: 0;
+  cursor: pointer;
+}
+
+.okay:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 1300px) {
+  span {
+    font-size: 40px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}
