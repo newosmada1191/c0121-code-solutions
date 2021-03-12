@@ -57,3 +57,22 @@ if (appCommand === 'update') {
     });
   });
 }
+
+if (appCommand === 'delete') {
+  fs.readFile('data.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    const parsedData = JSON.parse(data);
+    const id = process.argv[3];
+    delete parsedData.notes[id];
+    const newText = JSON.stringify(parsedData, null, 2);
+    fs.writeFile('data.json', newText, 'utf8', err => {
+      if (err) {
+        console.error(err);
+        process.exit(1);
+      }
+    });
+  });
+}
