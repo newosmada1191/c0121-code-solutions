@@ -69,3 +69,7 @@ h1 {
 .icon-change > i:hover {
   cursor: pointer;
 }
+
+.hidden {
+  display: none !important;
+}
