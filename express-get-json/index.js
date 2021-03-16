@@ -28,8 +28,7 @@ app.get('/api/grades', (req, res) => {
     array.push(grades[i]);
     i++;
   }
-  const jsonArray = res.json(array);
-  res.send(jsonArray);
+  res.json(array);
 });
 
 app.listen(3000, () => {
