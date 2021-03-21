@@ -34,11 +34,15 @@ app.get('/api/notes/:id', (req, res) => {
     const intErr = { error: 'id must be a positive integer' };
     const missErr = { error: `cannot find note with id ${id}` };
     if (Math.sign(id) === -1) {
-      res.send(intErr);
+      res.status(400).send(intErr);
     } else if (!noteId) {
-      res.send(missErr);
+      res.status(404).send(missErr);
     } else {
-      res.json(noteId);
+      res.status(200).json(noteId);
     }
   });
 });
+
+// app.post('/api/notes/', (req, res) => {
+
+// })
