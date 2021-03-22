@@ -43,6 +43,25 @@ app.get('/api/notes/:id', (req, res) => {
   });
 });
 
-// app.post('/api/notes/', (req, res) => {
-
-// })
+app.post('/api/notes/', (req, res) => {
+  fs.writeFile('data.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    const noteValues = JSON.parse(data);
+    let id = req.body.id;
+    const noteId = noteValues.notes[id];
+    id++;
+    res.status(201).json(noteId);
+    if (!req.body) {
+      res.status(400).json({
+        error: 'content is a required field'
+      });
+    } else if (!req) {
+      res.status(500).json({
+        error: 'An unexpected error occured'
+      });
+    }
+  });
+});
