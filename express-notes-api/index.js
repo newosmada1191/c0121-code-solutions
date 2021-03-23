@@ -18,7 +18,7 @@ app.get('/api/notes', (req, res) => {
     for (const id in noteValues.notes) {
       noteArray.push(noteValues.notes[id]);
     }
-    res.json(noteArray);
+    res.status(200).json(noteArray);
   });
 });
 
@@ -33,7 +33,7 @@ app.get('/api/notes/:id', (req, res) => {
     const noteId = noteValues.notes[id];
     const intErr = { error: 'id must be a positive integer' };
     const missErr = { error: `cannot find note with id ${id}` };
-    if (Math.sign(id) === -1) {
+    if (Math.sign(id) < 0) {
       res.status(400).send(intErr);
     } else if (!noteId) {
       res.status(404).send(missErr);
@@ -42,6 +42,9 @@ app.get('/api/notes/:id', (req, res) => {
     }
   });
 });
+
+const parsedJSON = express.json();
+app.use(parsedJSON);
 
 app.post('/api/notes/', (req, res) => {
   fs.writeFile('data.json', 'utf8', (err, data) => {
