@@ -1,11 +1,10 @@
 /* exported capitalizeWords */
-function capitalizeWords(word) {
-  var newString = '';
-  word = word.toLowerCase();
-  if (word === 'javascript') {
-    return 'JavaScript';
+function capitalizeWords(string) {
+  const lwrString = string.toLowerCase();
+  const newString = lwrString.split(' ');
+  for (let i = 0; i < newString.length; i++) {
+    newString[i] = newString[i].charAt(0).toUpperCase() +
+      newString[i].substring(1, newString[i].length);
   }
-  newString = word[0].toUpperCase();
-  newString += word.slice(1);
-  return newString;
+  return newString.join(' ');
 }
