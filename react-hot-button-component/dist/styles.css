@@ -1,0 +1,39 @@
+button {
+  border: 1px solid #444;
+  border-radius: 2px;
+}
+
+.absolute-zero {
+  background-color: #444;
+  color: #f5f5f5;
+}
+
+.freezing {
+  background-color: blue;
+  color: #f5f5f5;
+}
+
+.cold {
+  background-color: blueviolet;
+  color: #f5f5f5;
+}
+
+.warm {
+  background-color: coral;
+  color: #f5f5f5;
+}
+
+.hot {
+  background-color: orange;
+  color: #444;
+}
+
+.burning {
+  background-color: yellow;
+  color: #444;
+}
+
+.praise-the-sun {
+  background-color: #f5f5f5;
+  color: #444;
+}
