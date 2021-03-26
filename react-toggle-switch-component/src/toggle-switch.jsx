@@ -14,8 +14,8 @@ class ToggleSwitch extends React.Component {
   }
 
   handleSwitch() {
-    if (this.state.isOn) { return 'on'; }
-    return 'off';
+    if (this.state.isOn) { return 'switch-on'; }
+    return 'switch-off';
   }
 
   render() {
@@ -23,7 +23,12 @@ class ToggleSwitch extends React.Component {
     return (
       <div className="container">
         <div className={ newClass }>
-          <button onClick={ this.handleClick } className={ newClass }></button>
+          <button onClick={ this.handleClick }
+          className={ newClass }>
+          </button>
+          <div className="please-get-out" onClick={ this.handleClick }>
+            {this.state.isOn ? 'On' : 'Off'}
+          </div>
         </div>
       </div>
     );
