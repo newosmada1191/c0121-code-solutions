@@ -1,0 +1,36 @@
+div.container {
+  display: flex;
+}
+
+button {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  outline: none;
+}
+
+div {
+  position: relative;
+  display: flex;
+  width: 2rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+div.switch-off {
+  background-color: #b4b3b3;
+}
+
+div.switch-on {
+  background-color: #41e600;
+}
+
+button.switch-on {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+div.please-get-out {
+  margin-left: 2rem;
+}
