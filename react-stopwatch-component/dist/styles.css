@@ -16,6 +16,11 @@
 }
 
 i {
-  margin-left: 2rem;
+  margin-left: 2.25rem;
   margin-top: 0.25rem;
+}
+
+.watch:hover,
+i:hover {
+  cursor: pointer;
 }

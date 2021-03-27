@@ -8,6 +8,7 @@ class StopWatch extends React.Component {
       isRunning: false
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleClick() {
@@ -16,16 +17,22 @@ class StopWatch extends React.Component {
         this.setState({ timePassed: this.state.timePassed + 1 }),
       1000
       );
-      return this.setState({ timePassed: 0, isRunning: true });
+      return this.setState({ isRunning: true });
     }
     clearInterval(this.interval);
     return this.setState({ isRunning: false });
   }
 
+  handleReset() {
+    if (!this.state.isRunning) {
+      this.setState({ timePassed: 0 });
+    }
+  }
+
   render() {
     return (
       <>
-        <div className="watch">
+        <div className="watch" onClick={ this.handleReset }>
           <div className="time">
             { this.state.timePassed }
           </div>
