@@ -16,10 +16,10 @@ class StopWatch extends React.Component {
         this.setState({ timePassed: this.state.timePassed + 1 }),
       1000
       );
-      return this.setState({ isRunning: true });
+      return this.setState({ timePassed: 0, isRunning: true });
     }
     clearInterval(this.interval);
-    return this.setState({ timePassed: 0, isRunning: false });
+    return this.setState({ isRunning: false });
   }
 
   render() {
