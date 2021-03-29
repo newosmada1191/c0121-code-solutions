@@ -1,17 +1,17 @@
 /* exported truncate */
 function truncate(length, string) {
-  var newString = '';
-  if (string.length !== 0) {
-    if (string.length < length) {
-      newString = string + '...';
-    } else {
-      for (let i = 0; i < length; i++) {
-        newString += string[i];
-      }
-      newString += '...';
-    }
+  let newString = '';
+  const dotString = '...';
+  if (string.length === 0) {
+    newString += dotString;
+  }
+  if (string.length < length) {
+    newString = string + dotString;
   } else {
-    newString += '...';
+    for (let i = 0; i < length; i++) {
+      newString += string[i];
+    }
+    newString += dotString;
   }
   return newString;
 }
