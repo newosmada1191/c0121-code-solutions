@@ -25,10 +25,13 @@ export default class App extends React.Component {
      */
     fetch('/api/todos')
       .then(res => res.json())
-      .then(data => {
-        this.setState({ todos: data })
-          .catch(err => console.error(err));
-      });
+      .then(todos => {
+        this.setState({ todos });
+      })
+      .catch(err => {
+        console.error(err);
+      }
+      );
   }
 
   addTodo(newTodo) {
@@ -40,15 +43,24 @@ export default class App extends React.Component {
     * TIP: Be sure to SERIALIZE the todo object in the body with JSON.stringify()
     * and specify the "Content-Type" header as "application/json"
     */
-    fetch('/api/todos', {
+    const req = {
       method: 'POST',
       headers: {
-        'Content Type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(newTodo)
-    })
-      .then(this.todos.push(newTodo))
-      .catch(err => console.error(err));
+    };
+
+    fetch('/api/todos', req)
+      .then(res => res.json())
+      .then(todo => {
+        const todos = this.state.todos.slice();
+        todos.push(todo);
+        this.setState({ todos: todos });
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 
   toggleCompleted(todoId) {
@@ -66,6 +78,28 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
+    const index = this.state.todos.findIndex(todo => todoId === todo.todoId);
+    const isCompleted = this.state.todos[index].isCompleted;
+    const toggled = {
+      isCompleted: !isCompleted
+    };
+    const req = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(toggled)
+    };
+    fetch(`/api/todos/${todoId}`, req)
+      .then(res => res.json())
+      .then(updatedTodo => {
+        const newTodos = this.state.todos.slice();
+        newTodos[index] = updatedTodo;
+        this.setState({ todos: newTodos });
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 
   render() {
