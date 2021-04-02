@@ -1,0 +1,5 @@
+User can sign up
+  The App component is rendered
+  The user is prompted to loggin or register
+  If the user clicks sign-in or sign-up the <Auth /> is returned
+  If the user is already signed in, they will be redirected to master Rick
