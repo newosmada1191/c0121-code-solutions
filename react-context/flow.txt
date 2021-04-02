@@ -1,0 +1,24 @@
+User can sign up
+  The App Component is rendered. The user is asked to sign-in or register.
+  If the user is registered, they can sign-in and will be redirected. If the
+  user needs to register an account, the <AuthForm> is rendered. The handleChange
+  method is called and it sets the state of the username. If both the username
+  and and password are entered the handleSubmit method is called and sends a
+  request to sign-up and the password is hashed. Then the username and password are
+  sent to the database. If both fields aren't filled, an error is returned.
+
+User can sign in
+  When the user puts in their username and password and hit enter, a post request
+  is sent to the middleware. If there isn't a username and password when the user
+  hits enter, an error will be returned. The password is compared to the hashed
+  password and if they do not match, an error will be returned. When the sign in
+  is successful, the home page is rendered.
+
+User can stay signed in (even if they refresh the page)
+  The token they recieved is saved to local storage. Whenever the page is reloaded,
+  the token is verified so they state is set to the user.
+
+User can sign out
+  When the user clicks sign out, the handleSignout method is called and the token
+  is removed from local storage. The state is set to its initial value. The user
+  is taken back to the sign-in or register page.
