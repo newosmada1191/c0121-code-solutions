@@ -1,11 +1,11 @@
-var $rightArrow = document.querySelector('#right-arrow-icon');
-var $leftArrow = document.querySelector('#left-arrow-icon');
-var $img = document.querySelector('#image-source');
-var $circleOne = document.querySelector('#circle-1');
-var $circleTwo = document.querySelector('#circle-2');
-var $circleThree = document.querySelector('#circle-3');
-var $circleFour = document.querySelector('#circle-4');
-var $circleFive = document.querySelector('#circle-5');
+const $rightArrow = document.querySelector('#right-arrow-icon');
+const $leftArrow = document.querySelector('#left-arrow-icon');
+const $img = document.querySelector('#image-source');
+const $circleOne = document.querySelector('#circle-one');
+const $circleTwo = document.querySelector('#circle-two');
+const $circleThree = document.querySelector('#circle-three');
+const $circleFour = document.querySelector('#circle-four');
+const $circleFive = document.querySelector('#circle-five');
 const imgArray = [
   'images/001.png',
   'images/004.png',
@@ -13,91 +13,120 @@ const imgArray = [
   'images/025.png',
   'images/039.png'
 ];
-let currentImg = '';
+const iconClass = [
+  'far fa-circle',
+  'fas fa-circle'
+];
 
-$rightArrow.addEventListener('click', () => {
-  currentImg = $img.getAttribute('src');
-  rightClick(currentImg);
-});
+let intervalID = setInterval(rightClick, 3000);
 
-function rightClick(currentImg) {
-  const currentImgIndex = imgArray.indexOf(currentImg);
-  let nextImgIndex;
-  if (currentImgIndex === imgArray.length - 1) {
-    nextImgIndex = 0;
-  } else {
-    nextImgIndex = currentImgIndex + 1;
+$rightArrow.addEventListener('click', rightClick);
+
+function rightClick(event) {
+  if ($img.getAttribute('src') === imgArray[0]) {
+    $img.setAttribute('src', imgArray[1]);
+    $circleOne.setAttribute('class', iconClass[0]);
+    $circleTwo.setAttribute('class', iconClass[1]);
+  } else if ($img.getAttribute('src') === imgArray[1]) {
+    $img.setAttribute('src', imgArray[2]);
+    $circleTwo.setAttribute('class', iconClass[0]);
+    $circleThree.setAttribute('class', iconClass[1]);
+  } else if ($img.getAttribute('src') === imgArray[2]) {
+    $img.setAttribute('src', imgArray[3]);
+    $circleThree.setAttribute('class', iconClass[0]);
+    $circleFour.setAttribute('class', iconClass[1]);
+  } else if ($img.getAttribute('src') === imgArray[3]) {
+    $img.setAttribute('src', imgArray[4]);
+    $circleFour.setAttribute('class', iconClass[0]);
+    $circleFive.setAttribute('class', iconClass[1]);
+  } else if ($img.getAttribute('src') === imgArray[4]) {
+    $img.setAttribute('src', imgArray[0]);
+    $circleFive.setAttribute('class', iconClass[0]);
+    $circleOne.setAttribute('class', iconClass[1]);
   }
-  $img.setAttribute('src', imgArray[nextImgIndex]);
-  const $currentCircle = document.querySelector(`#circle-${currentImgIndex + 1}`);
-  const $nextCircle = document.querySelector(`#circle-${nextImgIndex + 1}`);
-  $currentCircle.classList.remove('fas');
-  $currentCircle.classList.add('far');
-  $nextCircle.classList.remove('far');
-  $nextCircle.classList.add('fas');
+  clearInterval(intervalID);
+  intervalID = setInterval(rightClick, 3000);
 }
 
-var intervalID = setInterval(() => {
-  const currentImg = $img.getAttribute('src');
-  rightClick(currentImg);
-}, 3000);
+$leftArrow.addEventListener('click', leftClick);
 
-$leftArrow.addEventListener('click', () => {
-  currentImg = $img.getAttribute('src');
-  rightClick(currentImg);
-});
+function leftClick(event) {
+  if ($img.getAttribute('src') === imgArray[0]) {
+    $img.setAttribute('src', imgArray[4]);
+    $circleOne.setAttribute('class', iconClass[0]);
+    $circleFive.setAttribute('class', iconClass[1]);
+  } else if ($img.getAttribute('src') === imgArray[1]) {
+    $img.setAttribute('src', imgArray[0]);
+    $circleTwo.setAttribute('class', iconClass[0]);
+    $circleOne.setAttribute('class', iconClass[1]);
+  } else if ($img.getAttribute('src') === imgArray[2]) {
+    $img.setAttribute('src', imgArray[1]);
+    $circleThree.setAttribute('class', iconClass[0]);
+    $circleTwo.setAttribute('class', iconClass[1]);
+  } else if ($img.getAttribute('src') === imgArray[3]) {
+    $img.setAttribute('src', imgArray[2]);
+    $circleFour.setAttribute('class', iconClass[0]);
+    $circleThree.setAttribute('class', iconClass[1]);
+  } else if ($img.getAttribute('src') === imgArray[4]) {
+    $img.setAttribute('src', imgArray[3]);
+    $circleFive.setAttribute('class', iconClass[0]);
+    $circleFour.setAttribute('class', iconClass[1]);
+  }
+  clearInterval(intervalID);
+  intervalID = setInterval(rightClick, 3000);
+}
 
 $circleOne.addEventListener('click', function (event) {
-  $img.setAttribute('src', 'images/001.png');
-  $circleOne.setAttribute('class', 'fas fa-circle');
-  $circleTwo.setAttribute('class', 'far fa-circle');
-  $circleThree.setAttribute('class', 'far fa-circle');
-  $circleFour.setAttribute('class', 'far fa-circle');
-  $circleFive.setAttribute('class', 'far fa-circle');
+  $img.setAttribute('src', imgArray[0]);
+  $circleOne.setAttribute('class', iconClass[1]);
+  $circleTwo.setAttribute('class', iconClass[0]);
+  $circleThree.setAttribute('class', iconClass[0]);
+  $circleFour.setAttribute('class', iconClass[0]);
+  $circleFive.setAttribute('class', iconClass[0]);
   clearInterval(intervalID);
   intervalID = setInterval(rightClick, 3000);
 });
 
 $circleTwo.addEventListener('click', function (event) {
-  $img.setAttribute('src', 'images/004.png');
-  $circleOne.setAttribute('class', 'far fa-circle');
-  $circleTwo.setAttribute('class', 'fas fa-circle');
-  $circleThree.setAttribute('class', 'far fa-circle');
-  $circleFour.setAttribute('class', 'far fa-circle');
-  $circleFive.setAttribute('class', 'far fa-circle');
+  $img.setAttribute('src', imgArray[1]);
+  $circleOne.setAttribute('class', iconClass[0]);
+  $circleTwo.setAttribute('class', iconClass[1]);
+  $circleThree.setAttribute('class', iconClass[0]);
+  $circleFour.setAttribute('class', iconClass[0]);
+  $circleFive.setAttribute('class', iconClass[0]);
   clearInterval(intervalID);
   intervalID = setInterval(rightClick, 3000);
 });
 
 $circleThree.addEventListener('click', function (event) {
-  $img.setAttribute('src', 'images/007.png');
-  $circleOne.setAttribute('class', 'far fa-circle');
-  $circleTwo.setAttribute('class', 'far fa-circle');
-  $circleThree.setAttribute('class', 'fas fa-circle');
-  $circleFour.setAttribute('class', 'far fa-circle');
-  $circleFive.setAttribute('class', 'far fa-circle');
+  $img.setAttribute('src', imgArray[2]);
+  $circleOne.setAttribute('class', iconClass[0]);
+  $circleTwo.setAttribute('class', iconClass[0]);
+  $circleThree.setAttribute('class', iconClass[1]);
+  $circleFour.setAttribute('class', iconClass[0]);
+  $circleFive.setAttribute('class', iconClass[0]);
   clearInterval(intervalID);
   intervalID = setInterval(rightClick, 3000);
 });
 
 $circleFour.addEventListener('click', function (event) {
-  $img.setAttribute('src', 'images/025.png');
-  $circleOne.setAttribute('class', 'far fa-circle');
-  $circleTwo.setAttribute('class', 'far fa-circle');
-  $circleThree.setAttribute('class', 'far fa-circle');
-  $circleFour.setAttribute('class', 'fas fa-circle');
-  $circleFive.setAttribute('class', 'far fa-circle');
+  $img.setAttribute('src', imgArray[3]);
+  $circleOne.setAttribute('class', iconClass[0]);
+  $circleTwo.setAttribute('class', iconClass[0]);
+  $circleThree.setAttribute('class', iconClass[0]);
+  $circleFour.setAttribute('class', iconClass[1]);
+  $circleFive.setAttribute('class', iconClass[0]);
   clearInterval(intervalID);
   intervalID = setInterval(rightClick, 3000);
 });
 
 $circleFive.addEventListener('click', function (event) {
-  $img.setAttribute('src', 'images/039.png');
-  $circleOne.setAttribute('class', 'far fa-circle');
-  $circleTwo.setAttribute('class', 'far fa-circle');
-  $circleThree.setAttribute('class', 'far fa-circle');
-  $circleFour.setAttribute('class', 'far fa-circle');
-  $circleFive.setAttribute('class', 'fas fa-circle');
+  $img.setAttribute('src', imgArray[4]);
+  $circleOne.setAttribute('class', iconClass[0]);
+  $circleTwo.setAttribute('class', iconClass[0]);
+  $circleThree.setAttribute('class', iconClass[0]);
+  $circleFour.setAttribute('class', iconClass[0]);
+  $circleFive.setAttribute('class', iconClass[1]);
   clearInterval(intervalID);
   intervalID = setInterval(rightClick, 3000);
 });
