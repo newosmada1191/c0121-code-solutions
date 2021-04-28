@@ -1,11 +1,13 @@
 const $rightArrow = document.querySelector('#right-arrow-icon');
 const $leftArrow = document.querySelector('#left-arrow-icon');
 const $img = document.querySelector('#image-source');
+const $icons = document.querySelector('#icon-container');
 const $circleOne = document.querySelector('#circle-one');
 const $circleTwo = document.querySelector('#circle-two');
 const $circleThree = document.querySelector('#circle-three');
 const $circleFour = document.querySelector('#circle-four');
 const $circleFive = document.querySelector('#circle-five');
+const $iconChildren = $icons.children;
 const imgArray = [
   'images/001.png',
   'images/004.png',
@@ -76,57 +78,15 @@ function leftClick(event) {
   intervalID = setInterval(rightClick, 3000);
 }
 
-$circleOne.addEventListener('click', function (event) {
-  $img.setAttribute('src', imgArray[0]);
-  $circleOne.setAttribute('class', iconClass[1]);
-  $circleTwo.setAttribute('class', iconClass[0]);
-  $circleThree.setAttribute('class', iconClass[0]);
-  $circleFour.setAttribute('class', iconClass[0]);
-  $circleFive.setAttribute('class', iconClass[0]);
-  clearInterval(intervalID);
-  intervalID = setInterval(rightClick, 3000);
-});
-
-$circleTwo.addEventListener('click', function (event) {
-  $img.setAttribute('src', imgArray[1]);
-  $circleOne.setAttribute('class', iconClass[0]);
-  $circleTwo.setAttribute('class', iconClass[1]);
-  $circleThree.setAttribute('class', iconClass[0]);
-  $circleFour.setAttribute('class', iconClass[0]);
-  $circleFive.setAttribute('class', iconClass[0]);
-  clearInterval(intervalID);
-  intervalID = setInterval(rightClick, 3000);
-});
-
-$circleThree.addEventListener('click', function (event) {
-  $img.setAttribute('src', imgArray[2]);
-  $circleOne.setAttribute('class', iconClass[0]);
-  $circleTwo.setAttribute('class', iconClass[0]);
-  $circleThree.setAttribute('class', iconClass[1]);
-  $circleFour.setAttribute('class', iconClass[0]);
-  $circleFive.setAttribute('class', iconClass[0]);
-  clearInterval(intervalID);
-  intervalID = setInterval(rightClick, 3000);
-});
-
-$circleFour.addEventListener('click', function (event) {
-  $img.setAttribute('src', imgArray[3]);
-  $circleOne.setAttribute('class', iconClass[0]);
-  $circleTwo.setAttribute('class', iconClass[0]);
-  $circleThree.setAttribute('class', iconClass[0]);
-  $circleFour.setAttribute('class', iconClass[1]);
-  $circleFive.setAttribute('class', iconClass[0]);
-  clearInterval(intervalID);
-  intervalID = setInterval(rightClick, 3000);
-});
-
-$circleFive.addEventListener('click', function (event) {
-  $img.setAttribute('src', imgArray[4]);
-  $circleOne.setAttribute('class', iconClass[0]);
-  $circleTwo.setAttribute('class', iconClass[0]);
-  $circleThree.setAttribute('class', iconClass[0]);
-  $circleFour.setAttribute('class', iconClass[0]);
-  $circleFive.setAttribute('class', iconClass[1]);
+$icons.addEventListener('click', function (event) {
+  for (let i = 0; i < $iconChildren.length; i++) {
+    if ($iconChildren[i] === event.target) {
+      $iconChildren[i].setAttribute('class', iconClass[1]);
+      $img.setAttribute('src', imgArray[i]);
+    } else {
+      $iconChildren[i].setAttribute('class', iconClass[0]);
+    }
+  }
   clearInterval(intervalID);
   intervalID = setInterval(rightClick, 3000);
 });

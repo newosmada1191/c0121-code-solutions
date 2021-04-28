@@ -61,12 +61,12 @@ h1 {
   cursor: pointer;
 }
 
-.icon-change {
+.icon-container {
   align-items: flex-end;
   padding: 2rem 0;
 }
 
-.icon-change > i:hover {
+.icon-container > i:hover {
   cursor: pointer;
 }
 
