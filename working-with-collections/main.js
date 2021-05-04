@@ -23,10 +23,4 @@ const players = [
   }
 ];
 
-const deck = {
-  suites: ['clubs', 'diamonds', 'hearts', 'spades'],
-  cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 'jack', 'queen', 'king', 'ace']
-};
-
 console.log(players);
-console.log(deck);
