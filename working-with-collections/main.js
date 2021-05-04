@@ -1,28 +1,5 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
-const players = [
-  {
-    player: 'Arthas',
-    hand: [],
-    score: 0
-  },
-  {
-    player: 'Vegeta',
-    hand: [],
-    score: 0
-  },
-  {
-    player: 'Elliot',
-    hand: [],
-    score: 0
-  },
-  {
-    player: 'Saul Goodman',
-    hand: [],
-    score: 0
-  }
-];
-
 function card(value, name, suit) {
   this.value = value;
   this.name = name;
@@ -43,5 +20,16 @@ function deck() {
   return cards;
 }
 
+function player(name, hand, score) {
+  this.name = name;
+  this.hand = hand;
+  this.score = score;
+}
+
+function players() {
+  this.name = ['Arthas', 'Vegeta', 'Elliot', 'Saul Goodman'];
+}
+
 deck();
 console.log(players);
+console.log(player);
