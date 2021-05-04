@@ -16,9 +16,11 @@ function deck() {
       cards.push(new card(j + 1, this.names[j], this.suits[i]));
     }
   }
-  console.log('Value of cards:', cards);
   return cards;
 }
+
+const shuffledDeck = _.shuffle(deck());
+console.log(shuffledDeck);
 
 function player(name, hand, score) {
   this.name = name;
