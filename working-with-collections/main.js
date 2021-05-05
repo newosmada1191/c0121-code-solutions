@@ -1,6 +1,6 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
-function card(value, name, suit) {
+function Card(value, name, suit) {
   this.value = value;
   this.name = name;
   this.suit = suit;
@@ -12,14 +12,11 @@ function deck() {
   const cards = [];
   for (let i = 0; i < this.suits.length; i++) {
     for (let j = 0; j < this.names.length; j++) {
-      // eslint-disable-next-line new-cap
-      cards.push(new card(j + 1, this.names[j], this.suits[i]));
+      cards.push(new Card(j + 1, this.names[j], this.suits[i]));
     }
   }
   return cards;
 }
-
-deck();
 
 const shuffledDeck = _.shuffle(deck());
 console.log(shuffledDeck);
@@ -30,10 +27,15 @@ console.log(shuffledDeck);
 //   this.score = score;
 // }
 
-function players() {
-  this.names = ['Arthas', 'Vegeta', 'Elliot', 'Saul Goodman'];
-  this.hand = [];
-}
+// function players() {
+//   this.names = ['Arthas', 'Vegeta', 'Elliot', 'Saul Goodman'];
+//   this.hand = [];
+//   for (let l = 0; l < this.names.length; l++) {
+//     for (const k in shuffledDeck) {
 
-console.log(players);
+//     }
+//   }
+// }
+
+// console.log(players);
 // console.log(player);
