@@ -19,19 +19,21 @@ function deck() {
   return cards;
 }
 
+deck();
+
 const shuffledDeck = _.shuffle(deck());
 console.log(shuffledDeck);
 
-function player(name, hand, score) {
-  this.name = name;
-  this.hand = hand;
-  this.score = score;
-}
+// function player(name, hand, score) {
+//   this.name = name;
+//   this.hand = hand;
+//   this.score = score;
+// }
 
 function players() {
-  this.name = ['Arthas', 'Vegeta', 'Elliot', 'Saul Goodman'];
+  this.names = ['Arthas', 'Vegeta', 'Elliot', 'Saul Goodman'];
+  this.hand = [];
 }
 
-deck();
 console.log(players);
-console.log(player);
+// console.log(player);
