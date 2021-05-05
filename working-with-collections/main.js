@@ -18,23 +18,40 @@ function deck() {
   return cards;
 }
 
-function Players(name, hand, score) {
-  this.name = name;
-  this.hand = hand;
-  this.score = score;
-}
+const shuffledDeck = _.shuffle(deck());
 
-function playerScore() {
-  const shuffledDeck = _.shuffle(deck());
-  console.log(shuffledDeck);
-  console.log(shuffledDeck.length);
-  this.names = ['Arthas', 'Elliot Alderson', 'Saul Goodman', 'Vegeta'];
-  this.hand = [];
-  const hands = [];
-  for (let k = 0; k < this.names.length; k++) {
-    hands.push(new Players(this.names[k], 'test', 'test'));
+const players = [
+  {
+    name: 'Arthas',
+    hand: [],
+    score: 0
+  },
+  {
+    name: 'Elliot Alderson',
+    hand: [],
+    score: 0
+  },
+  {
+    name: 'Saul Goodman',
+    hand: [],
+    score: 0
+  },
+  {
+    name: 'Vegeta',
+    hand: [],
+    score: 0
   }
-  return hands;
+];
+
+function dealCards() {
+  let k = 0;
+  for (let l = 0; l < players.length * 2; l++) {
+    if (k === 4) {
+      k = 0;
+    }
+    players[k].hand.push(shuffledDeck[l]);
+    k++;
+  }
 }
 
-console.log(playerScore());
+dealCards();
