@@ -8,7 +8,7 @@ function Card(value, score, suit) {
 
 function deck() {
   this.score = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-  this.suits = ['Clubs', 'Diamonds', 'Hears', 'Spades'];
+  this.suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
   const cards = [];
   for (let i = 0; i < this.suits.length; i++) {
     for (let j = 0; j < this.score.length; j++) {
@@ -57,11 +57,25 @@ function dealCards() {
       if (players[m].hand[n].score === 'J' || players[m].hand[n].score === 'Q' || players[m].hand[n].score === 'K') {
         players[m].hand[n].value = 10;
       } else if (players[m].hand[n].score === 'A') {
-        players[m].hand[m].value = 11;
+        players[m].hand[n].value = 11;
       }
+      players[m].score = players[m].hand[0].value + players[m].hand[1].value;
     }
-    players[m].score = players[m].hand[0].value + players[m].hand[1].value;
   }
 }
 
 dealCards();
+
+function winner() {
+  let highScore = 0;
+  let winningHand = '';
+  for (const o in players) {
+    if (players[o].score > highScore) {
+      highScore = players[o].score;
+      winningHand = players[o].name;
+    }
+  }
+  console.log(winningHand, 'has won the draw with a score of', highScore);
+}
+
+winner();
