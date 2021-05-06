@@ -22,7 +22,7 @@ const shuffledDeck = _.shuffle(deck());
 
 const players = [
   {
-    name: 'Arthas',
+    name: 'Arthas Menethil',
     hand: [],
     score: 0
   },
@@ -59,8 +59,8 @@ function dealCards() {
       } else if (players[m].hand[n].score === 'A') {
         players[m].hand[m].value = 11;
       }
-      players[m].score = players[m].hand[0].value + players[m].hand[1].value;
     }
+    players[m].score = players[m].hand[0].value + players[m].hand[1].value;
   }
 }
 
