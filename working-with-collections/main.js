@@ -52,12 +52,18 @@ function dealCards() {
     players[k].hand.push(shuffledDeck[l]);
     k++;
   }
+  for (let m = 0; m < players.length; m++) {
+    players[m].score = players[m].hand[0].value + players[m].hand[1].value;
+  }
+  console.log(players);
 }
 
 dealCards();
 
-for (let m = 0; m < players.length; m++) {
-  players[m].score = players[m].hand[0].value + players[m].hand[1].value;
-}
+// for (let m = 0; m < players.length; m++) {
+//   players[m].score = players[m].hand[0].value + players[m].hand[1].value;
+// }
 
-console.log(players);
+// function winner() {
+
+// }
