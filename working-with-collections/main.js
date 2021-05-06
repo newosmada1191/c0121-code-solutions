@@ -60,10 +60,6 @@ function dealCards() {
 
 dealCards();
 
-// for (let m = 0; m < players.length; m++) {
-//   players[m].score = players[m].hand[0].value + players[m].hand[1].value;
-// }
-
 // function winner() {
 
 // }
