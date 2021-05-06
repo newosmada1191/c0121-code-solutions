@@ -53,13 +53,15 @@ function dealCards() {
     k++;
   }
   for (let m = 0; m < players.length; m++) {
-    players[m].score = players[m].hand[0].value + players[m].hand[1].value;
+    for (let n = 0; n < players[0].hand.length; n++) {
+      if (players[m].hand[n].score === 'J' || players[m].hand[n].score === 'Q' || players[m].hand[n].score === 'K') {
+        players[m].hand[n].value = 10;
+      } else if (players[m].hand[n].score === 'A') {
+        players[m].hand[m].value = 11;
+      }
+      players[m].score = players[m].hand[0].value + players[m].hand[1].value;
+    }
   }
-  console.log(players);
 }
 
 dealCards();
-
-// function winner() {
-
-// }
