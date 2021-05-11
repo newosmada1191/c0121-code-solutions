@@ -6,8 +6,6 @@ const app = express();
 console.log(express);
 // eslint-disable-next-line no-console
 console.log(fs);
-// eslint-disable-next-line no-console
-console.log(app);
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
