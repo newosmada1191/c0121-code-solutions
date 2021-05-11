@@ -19,10 +19,13 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/api/notes/:id', (req, res) => {
-  const noteById = {};
+  const sendError = {};
   if (req.params.id < 0) {
-    noteById.error = 'id must be a positive integer';
-    res.status(400).json(noteById);
+    sendError.error = 'id must be a positive integer';
+    res.status(400).json(sendError);
+  } else if (!data.notes[req.params.id]) {
+    sendError.error = `cannot find note with id ${req.params.id}`;
+    res.status(404).json(sendError);
   } else {
     res.status(200).json(data.notes[req.params.id]);
   }
