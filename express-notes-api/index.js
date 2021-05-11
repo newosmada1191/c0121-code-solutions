@@ -19,25 +19,38 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/api/notes/:id', (req, res) => {
-  const sendError = {};
+  const sendStatus = {};
   if (req.params.id < 0) {
-    sendError.error = 'id must be a positive integer';
-    res.status(400).json(sendError);
+    sendStatus.error = 'id must be a positive integer';
+    res.status(400).json(sendStatus);
   } else if (!data.notes[req.params.id]) {
-    sendError.error = `cannot find note with id ${req.params.id}`;
-    res.status(404).json(sendError);
+    sendStatus.error = `cannot find note with id ${req.params.id}`;
+    res.status(404).json(sendStatus);
   } else {
     res.status(200).json(data.notes[req.params.id]);
   }
 });
 
-const parsedJSON = express.json();
-app.use(parsedJSON);
+app.use(express.json());
 
 app.post('/api/notes/', (req, res) => {
-  const sendStatus = {};
+  let sendStatus = {};
   if (!req.body.content) {
     sendStatus.error = 'content is required';
     res.status(400).json(sendStatus);
+  } else {
+    data.notes[data.nextId] = req.body;
+    data.notes[data.nextId].id = data.nextId;
+    sendStatus = data.notes[data.nextId];
+    data.nextId++;
+    const jsonString = JSON.stringify(data, null, 2);
+    fs.writeFile('./data.json', jsonString, 'utf8', err => {
+      if (err) {
+        sendStatus.error = 'an unexpected error occured';
+        res.status(500).json(sendStatus);
+      } else {
+        res.status(201).json(sendStatus);
+      }
+    });
   }
 });
