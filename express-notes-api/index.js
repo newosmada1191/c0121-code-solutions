@@ -30,3 +30,6 @@ app.get('/api/notes/:id', (req, res) => {
     res.status(200).json(data.notes[req.params.id]);
   }
 });
+
+const parsedJSON = express.json();
+app.use(parsedJSON);
