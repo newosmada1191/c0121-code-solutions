@@ -17,3 +17,13 @@ app.get('/api/notes', (req, res) => {
   }
   res.status(200).json(jsonArray);
 });
+
+app.get('/api/notes/:id', (req, res) => {
+  const noteById = {};
+  if (req.params.id < 0) {
+    noteById.error = 'id must be a positive integer';
+    res.status(400).json(noteById);
+  } else {
+    res.status(200).json(data.notes[req.params.id]);
+  }
+});
