@@ -33,3 +33,11 @@ app.get('/api/notes/:id', (req, res) => {
 
 const parsedJSON = express.json();
 app.use(parsedJSON);
+
+app.post('/api/notes/', (req, res) => {
+  const sendStatus = {};
+  if (!req.body.content) {
+    sendStatus.error = 'content is required';
+    res.status(400).json(sendStatus);
+  }
+});
