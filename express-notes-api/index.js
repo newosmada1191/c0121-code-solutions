@@ -2,8 +2,6 @@ const express = require('express');
 const data = require('./data.json');
 const fs = require('fs');
 const app = express();
-// eslint-disable-next-line no-console
-console.log(fs);
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
