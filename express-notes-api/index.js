@@ -59,7 +59,10 @@ app.delete('/api/notes/:id', (req, res) => {
     sendStatus.error = 'id must be a positive integer';
     res.status(400).json(sendStatus);
   } else if (!data.notes[req.params.id]) {
-    sendStatus.error = `id number of ${req.params.id} does not exist!`;
+    sendStatus.error = `id number of ${req.params.id} does not exist`;
     res.status(404).json(sendStatus);
+  } else {
+    delete data.notes[req.params.id];
+    res.status(204);
   }
 });
