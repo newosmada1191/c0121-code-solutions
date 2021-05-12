@@ -63,6 +63,14 @@ app.delete('/api/notes/:id', (req, res) => {
     res.status(404).json(sendStatus);
   } else {
     delete data.notes[req.params.id];
-    res.status(204);
+    const jsonString = JSON.stringify(sendStatus, null, 2);
+    fs.writeFile('./data.json', jsonString, 'utf8', err => {
+      if (err) {
+        sendStatus.error = 'an unexpected error occured';
+        res.status(500).json(sendStatus);
+      } else {
+        res.sendStatus(204);
+      }
+    });
   }
 });
