@@ -52,3 +52,14 @@ app.post('/api/notes/', (req, res) => {
     });
   }
 });
+
+app.delete('/api/notes/:id', (req, res) => {
+  const sendStatus = {};
+  if (req.params.id < 0) {
+    sendStatus.error = 'id must be a positive integer';
+    res.status(400).json(sendStatus);
+  } else if (!data.notes[req.params.id]) {
+    sendStatus.error = `id number of ${req.params.id} does not exist!`;
+    res.status(404).json(sendStatus);
+  }
+});
