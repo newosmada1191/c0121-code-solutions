@@ -76,12 +76,24 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.put('/api/notes/:id', (req, res) => {
-  const sendStatus = {};
+  let sendStatus = {};
   if (req.params.id < 0 || !req.body.content) {
     sendStatus.error = 'id must be a positive integer and content is required';
     res.status(400).json(sendStatus);
   } else if (!data.notes[req.params.id]) {
     sendStatus.error = `note with id ${req.params.id} does not exist`;
     res.status(404).json(sendStatus);
+  } else {
+    data.notes[req.params.id].content = req.body.content;
+    sendStatus = data.notes[req.params.id];
+    const jsonString = JSON.stringify(sendStatus, null, 2);
+    fs.writeFile('./data.json', jsonString, 'utf8', err => {
+      if (err) {
+        sendStatus.error = 'an unexpected error occured';
+        res.status(500).json(sendStatus);
+      } else {
+        res.status(201).json(sendStatus);
+      }
+    });
   }
 });
