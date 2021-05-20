@@ -28,6 +28,3 @@ app.get('/api/grades', (req, res) => {
       res.sendStatus(500);
     });
 });
-
-// eslint-disable-next-line no-console
-console.log(db);
