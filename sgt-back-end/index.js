@@ -2,6 +2,13 @@ const pg = require('pg');
 const express = require('express');
 const app = express();
 
+function validScore(num) {
+  if (parseInt(num) >= 1 && parseInt(num) <= 100) {
+    return true;
+  }
+  return false;
+}
+
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('Server is listening on port 3000!');
@@ -30,3 +37,35 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.use(express.json());
+
+app.post('/api/grades', (req, res) => {
+  const sendStatus = {};
+  if (!req.body.name || !req.body.course || !req.body.score) {
+    sendStatus.error = 'name, course, and score are required';
+    res.status(400).json(sendStatus);
+  } else if (!validScore(req.body.score)) {
+    sendStatus.error = 'score must be a number between 1 and 100';
+    res.status(400).json(sendStatus);
+    return;
+  }
+  const sql = `
+    insert into "grades" ("name","course","score")
+    values (
+      $1,
+      $2,
+      $3
+    )
+    returning *
+  `;
+  const values = [req.body.name, req.body.course, req.body.score];
+  db.query(sql, values)
+    .then(success => {
+      const grade = success.rows[0];
+      res.status(200).json(grade);
+    })
+    .catch(error => {
+      console.error(`error ${error}`);
+      sendStatus.error = 'an unexpected error occurred';
+      res.status.length(500).json(sendStatus);
+    });
+});
