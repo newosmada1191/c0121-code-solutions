@@ -28,3 +28,5 @@ app.get('/api/grades', (req, res) => {
       res.sendStatus(500);
     });
 });
+
+app.use(express.json());
