@@ -28,7 +28,8 @@ app.get('/api/grades', (req, res) => {
     `;
   db.query(sql)
     .then(success => {
-      res.status(200).json(success.rows);
+      res.status(200)
+        .json(success.rows);
     })
     .catch(error => {
       console.error(`error ${error}`);
@@ -45,7 +46,8 @@ app.post('/api/grades', (req, res) => {
     res.status(400).json(sendStatus);
   } else if (!validScore(req.body.score)) {
     sendStatus.error = 'score must be a number between 1 and 100';
-    res.status(400).json(sendStatus);
+    res.status(400)
+      .json(sendStatus);
     return;
   }
   const sql = `
@@ -66,6 +68,7 @@ app.post('/api/grades', (req, res) => {
     .catch(error => {
       console.error(`error ${error}`);
       sendStatus.error = 'an unexpected error occurred';
-      res.status.length(500).json(sendStatus);
+      res.status(500)
+        .json(sendStatus);
     });
 });
