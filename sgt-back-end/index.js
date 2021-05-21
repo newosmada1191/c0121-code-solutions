@@ -2,13 +2,6 @@ const pg = require('pg');
 const express = require('express');
 const app = express();
 
-function validScore(num) {
-  if (parseInt(num) >= 1 && parseInt(num) <= 100) {
-    return true;
-  }
-  return false;
-}
-
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('Server is listening on port 3000!');
@@ -44,7 +37,7 @@ app.post('/api/grades', (req, res) => {
   if (!req.body.name || !req.body.course || !req.body.score) {
     sendStatus.error = 'name, course, and score are required';
     res.status(400).json(sendStatus);
-  } else if (!validScore(req.body.score)) {
+  } else if (req.body.score < 1 || req.body.score > 100) {
     sendStatus.error = 'score must be a number between 1 and 100';
     res.status(400)
       .json(sendStatus);
@@ -63,7 +56,8 @@ app.post('/api/grades', (req, res) => {
   db.query(sql, values)
     .then(success => {
       const grade = success.rows[0];
-      res.status(200).json(grade);
+      res.status(200)
+        .json(grade);
     })
     .catch(error => {
       console.error(`error ${error}`);
