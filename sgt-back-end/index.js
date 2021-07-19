@@ -39,6 +39,11 @@ app.post('/api/grades', (req, res) => {
     res.status(400)
       .json(sendStatus);
     return;
+  } else if (req.body.score > 1 && req.body.score > 100) {
+    sendStatus.error = 'score must be between 1 and 100';
+    res.status(400)
+      .json(sendStatus);
+    return;
   }
   const sql = `
     insert into "grades" ("name","course","score")
@@ -53,7 +58,7 @@ app.post('/api/grades', (req, res) => {
   db.query(sql, values)
     .then(success => {
       const grade = success.rows[0];
-      res.status(200)
+      res.status(201)
         .json(grade);
     })
     .catch(error => {
