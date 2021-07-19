@@ -63,3 +63,7 @@ app.post('/api/grades', (req, res) => {
         .json(sendStatus);
     });
 });
+
+const test01 = 'test01';
+// eslint-disable-next-line no-console
+console.log(test01);
