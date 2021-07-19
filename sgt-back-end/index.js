@@ -36,9 +36,6 @@ app.post('/api/grades', (req, res) => {
   const sendStatus = {};
   if (!req.body.name || !req.body.course || !req.body.score) {
     sendStatus.error = 'name, course, and score are required';
-    res.status(400).json(sendStatus);
-  } else if (req.body.score < 1 || req.body.score > 100) {
-    sendStatus.error = 'score must be a number between 1 and 100';
     res.status(400)
       .json(sendStatus);
     return;
