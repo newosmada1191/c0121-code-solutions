@@ -39,7 +39,7 @@ app.post('/api/grades', (req, res) => {
     res.status(400)
       .json(sendStatus);
     return;
-  } else if (req.body.score < 1 && req.body.score > 100) {
+  } else if (req.body.score < 1 || req.body.score > 100) {
     sendStatus.error = 'score must be between 1 and 100';
     res.status(400)
       .json(sendStatus);
