@@ -77,18 +77,16 @@ app.put('api/grades/:gradeId', (req, res) => {
     res.status(400)
       .json(sendStatus);
     return;
-  }
-  if (!req.body.name || !req.body.course || !req.body.score) {
+  } else if (!req.body.name || !req.body.course || !req.body.score) {
     sendStatus.error = 'name, course, and score are required';
     res.status(400)
       .json(sendStatus);
     return;
-  }
-  if (req.body.score < 1 || req.body.score > 100) {
+  } else if (req.body.score < 1 || req.body.score > 100) {
     sendStatus.error = 'score must be between 1 and 100';
     res.status(400)
       .json(sendStatus);
-
+    return;
   }
   const sql = `
     update "grades"
@@ -98,6 +96,23 @@ app.put('api/grades/:gradeId', (req, res) => {
   where "gradeId" = $4
   returning *
   `;
-  // eslint-disable-next-line no-console
-  console.log(sql);
+  const params = [req.body.name, req.body.course, req.body.score, gradeId];
+  db.query(sql, params)
+    .then(result => {
+      const grade = result.rows[0];
+      if (!grade) {
+        sendStatus.error = `${gradeId} does not exist in the database`;
+        res.status(404)
+          .json(sendStatus);
+      } else {
+        res.status(200)
+          .json(grade);
+      }
+    })
+    .catch(error => {
+      console.error(`error ${error}`);
+      sendStatus.error = 'an unexpected error occurred';
+      res.status(500)
+        .json(sendStatus);
+    });
 });
