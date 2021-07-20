@@ -69,7 +69,7 @@ app.post('/api/grades', (req, res) => {
     });
 });
 
-app.put('api/grades/:gradeId', (req, res) => {
+app.put('/api/grades/:gradeId', (req, res) => {
   const sendStatus = {};
   const gradeId = parseInt(req.params.gradeId, 10);
   if (!Number.isInterger(gradeId) || gradeId < 1) {
