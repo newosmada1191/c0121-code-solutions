@@ -76,13 +76,15 @@ app.put('api/grades/:gradeId', (req, res) => {
     sendStatus.error = 'gradeId must be a positive number';
     res.status(400)
       .json(sendStatus);
-
-  } else if (!req.body.name || !req.body.course || !req.body.score) {
+    return;
+  }
+  if (!req.body.name || !req.body.course || !req.body.score) {
     sendStatus.error = 'name, course, and score are required';
     res.status(400)
       .json(sendStatus);
-
-  } else if (req.body.score < 1 || req.body.score > 100) {
+    return;
+  }
+  if (req.body.score < 1 || req.body.score > 100) {
     sendStatus.error = 'score must be between 1 and 100';
     res.status(400)
       .json(sendStatus);
