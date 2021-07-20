@@ -90,4 +90,14 @@ app.put('api/grades/:gradeId', (req, res) => {
       .json(sendStatus);
 
   }
+  const sql = `
+    update "grades"
+       set "name" = $1,
+         "course" = $2,
+          "score" = $3
+  where "gradeId" = $4
+  returning *
+  `;
+  // eslint-disable-next-line no-console
+  console.log(sql);
 });
