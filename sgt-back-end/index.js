@@ -77,7 +77,7 @@ app.put('api/grades/:gradeId', (req, res) => {
     res.status(400)
       .json(sendStatus);
     return;
-  } else if (!req.body.name || !req.body.course || !req.body.score) {
+  } if (!req.body.name || !req.body.course || !req.body.score) {
     sendStatus.error = 'name, course, and score are required';
     res.status(400)
       .json(sendStatus);
@@ -91,17 +91,17 @@ app.put('api/grades/:gradeId', (req, res) => {
   const sql = `
     update "grades"
        set "name" = $1,
-         "course" = $2,
-          "score" = $3
-  where "gradeId" = $4
-  returning *
+           "course" = $2,
+           "score" = $3
+     where "gradeId" = $4
+    returning *
   `;
   const params = [req.body.name, req.body.course, req.body.score, gradeId];
   db.query(sql, params)
     .then(result => {
       const grade = result.rows[0];
       if (!grade) {
-        sendStatus.error = `${gradeId} does not exist in the database`;
+        sendStatus.error = 'grade Id does not exist in the database';
         res.status(404)
           .json(sendStatus);
       } else {
