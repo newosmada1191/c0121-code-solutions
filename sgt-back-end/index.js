@@ -116,3 +116,9 @@ app.put('/api/grades/:gradeId', (req, res) => {
         .json(sendStatus);
     });
 });
+
+app.delete('api/grades/:gradeId', (req, res) => {
+  const gradeId = parseInt(req.params.gradeId, 10);
+  // eslint-disable-next-line no-console
+  console.log(gradeId);
+});
