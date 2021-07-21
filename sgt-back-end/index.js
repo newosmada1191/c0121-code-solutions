@@ -118,7 +118,13 @@ app.put('/api/grades/:gradeId', (req, res) => {
 });
 
 app.delete('api/grades/:gradeId', (req, res) => {
+  const sendStatus = {};
   const gradeId = parseInt(req.params.gradeId, 10);
+  if (!gradeId || gradeId < 1) {
+    sendStatus.error = 'gradeId must be a positive number';
+    res.status(400)
+      .json(sendStatus);
+  }
   // eslint-disable-next-line no-console
   console.log(gradeId);
 });
