@@ -72,7 +72,7 @@ app.post('/api/grades', (req, res) => {
 app.put('/api/grades/:gradeId', (req, res) => {
   const sendStatus = {};
   const gradeId = parseInt(req.params.gradeId, 10);
-  if (!Number.isInterger(gradeId) || gradeId < 1) {
+  if (!gradeId || gradeId < 1) {
     sendStatus.error = 'gradeId must be a positive number';
     res.status(400)
       .json(sendStatus);
