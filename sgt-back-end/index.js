@@ -130,6 +130,9 @@ app.delete('api/grades/:gradeId', (req, res) => {
     where "gradeId" = $1
     returning *
   `;
+  const params = [gradeId];
   // eslint-disable-next-line no-console
-  console.log(`value of sql ${sql}`);
+  console.log(`value of sql: ${sql}`);
+  // eslint-disable-next-line no-console
+  console.log(`value of prams: ${params}`);
 });
