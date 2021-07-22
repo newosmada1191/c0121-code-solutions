@@ -127,12 +127,27 @@ app.delete('api/grades/:gradeId', (req, res) => {
   }
   const sql = `
     delete from "grades"
-    where "gradeId" = $1
+          where "gradeId" = $1
     returning *
   `;
   const params = [gradeId];
-  // eslint-disable-next-line no-console
-  console.log(`value of sql: ${sql}`);
-  // eslint-disable-next-line no-console
-  console.log(`value of prams: ${params}`);
+  db.query(sql, params)
+    .then(result => {
+      const grade = result.rows[0];
+      if (!grade) {
+        sendStatus.error = `${gradeId} does not exist int he databse`;
+        res.status(404)
+          .json(sendStatus);
+      } else {
+        sendStatus.success = `${gradeId} was successfully deleted`;
+        res.status(204)
+          .json(sendStatus);
+      }
+    })
+    .catch(error => {
+      console.error(`error ${error}`);
+      sendStatus.error = 'an unexpected error occurred';
+      res.status(500)
+        .json(sendStatus);
+    });
 });
