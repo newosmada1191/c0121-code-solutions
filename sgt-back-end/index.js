@@ -125,4 +125,11 @@ app.delete('api/grades/:gradeId', (req, res) => {
     res.status(400)
       .json(sendStatus);
   }
+  const sql = `
+    delete from "grades"
+    where "gradeId" = $1
+    returning *
+  `;
+  // eslint-disable-next-line no-console
+  console.log(`value of sql ${sql}`);
 });
