@@ -117,7 +117,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
     });
 });
 
-app.delete('api/grades/:gradeId', (req, res) => {
+app.delete('/api/grades/:gradeId', (req, res) => {
   const sendStatus = {};
   const gradeId = parseInt(req.params.gradeId, 10);
   if (!gradeId || gradeId < 1) {
