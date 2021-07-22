@@ -125,6 +125,4 @@ app.delete('api/grades/:gradeId', (req, res) => {
     res.status(400)
       .json(sendStatus);
   }
-  // eslint-disable-next-line no-console
-  console.log(gradeId);
 });
