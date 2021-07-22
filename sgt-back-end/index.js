@@ -101,7 +101,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
     .then(result => {
       const grade = result.rows[0];
       if (!grade) {
-        sendStatus.error = `${gradeId} does not exist in the database`;
+        sendStatus.error = `a gradeId of ${gradeId} does not exist in the database`;
         res.status(404)
           .json(sendStatus);
       } else {
@@ -135,7 +135,7 @@ app.delete('/api/grades/:gradeId', (req, res) => {
     .then(result => {
       const grade = result.rows[0];
       if (!grade) {
-        sendStatus.error = `${gradeId} does not exist int he databse`;
+        sendStatus.error = `a gradeId of ${gradeId} does not exist in the database`;
         res.status(404)
           .json(sendStatus);
       } else {
